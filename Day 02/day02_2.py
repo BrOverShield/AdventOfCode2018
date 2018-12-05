@@ -1,5 +1,5 @@
 
-filename = "day02_2 example.txt"
+filename = "day02 input.txt"
 input = open(filename)
 
 lines = input.read().split()
@@ -20,12 +20,12 @@ while answer == False:
 
         string2 = lines[string2_iter]
 
-        if string1 == string2 or string1.length != string2.length:
+        if string1 == string2 or len(string1) != len(string2):
             break
         else:
             mismatch = False
             i = 0
-            for  i < string1.length:
+            while i < len(string1):
                 if string1[i] != string2[i]:
                     if mismatch == True:
                         mismatch = False
@@ -33,12 +33,12 @@ while answer == False:
                     else:
                         mismatch = True
                         position = i
-                i++:
+                i += 1
             if mismatch == True:
                 answer = True
                 print("string1 : " + str(string1))
                 print("string2 : " + str(string2))
-                print("answer : " + string1[:position] + string1[position+1:])
+                print("answer  : " + string1[:position] + string1[position+1:])
 
         string2_iter += 1
     
